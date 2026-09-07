@@ -26,19 +26,19 @@ function NewReport() {
         className="form-card"
         onSubmit={handleSubmit}
       >
-        <h2>Please Fill Up The Form</h2>
+        <h2>ফর্মটি পূরণ করুন</h2>
 
-        <label>Problem</label>
+        <label>সমস্যা</label>
 
         <input
           type="text"
-          placeholder="Enter the problem"
+          placeholder="সমস্যাটি লিখুন"
           value={problem}
           onChange={(e) => setProblem(e.target.value)}
           required
         />
 
-        <label>Equipment</label>
+        <label>যন্ত্রপাতি</label>
 
         <select
           value={equipment}
@@ -46,23 +46,47 @@ function NewReport() {
           required
         >
           <option value="">
-            Select Equipment
+            যন্ত্রপাতি নির্বাচন করুন
           </option>
 
-          <option value="Tractor-01">
-            Tractor-01
+          <option value="Tractor">
+            ট্র্যাক্টর
           </option>
 
-          <option value="Pump-03">
-            Pump-03
+          <option value="Plough">
+            লাঙ্গল / হাল
           </option>
 
-          <option value="Harvester-02">
-            Harvester-02
+          <option value="Disc-Harrow">
+            ডিস্ক হ্যারো
           </option>
 
-          <option value="Sprayer-01">
-            Sprayer-01
+          <option value="Seed-Drill">
+            বীজ বোনার যন্ত্র
+          </option>
+
+          <option value="Cultivator">
+            আবাদকারী
+          </option>
+
+          <option value="Agricultural-Sprayer">
+            কৃষি স্প্রে মেশিন
+          </option>
+
+          <option value="Tractor-Mounted-Sprayer">
+            ট্র্যাক্টরে সংযোজিত কীটনাশক ছিটানোর যন্ত্র
+          </option>
+
+          <option value="Sprinkler-Irrigation">
+            স্প্রিঙ্কলার সেচ
+          </option>
+
+          <option value="Power-Tiller">
+            জমি চাষের পাওয়ার টিলার
+          </option>
+
+          <option value="Soil-Testing-Kit">
+            মাটি পরীক্ষার কিট
           </option>
         </select>
 
@@ -70,7 +94,7 @@ function NewReport() {
           className="btn"
           type="submit"
         >
-          Submit
+          জমা দিন
         </button>
 
         <button
@@ -78,7 +102,7 @@ function NewReport() {
           className="back-btn"
           onClick={() => navigate("/operator")}
         >
-          Back
+          ফিরে যান
         </button>
       </form>
     </div>

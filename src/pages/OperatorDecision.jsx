@@ -16,35 +16,34 @@ function OperatorDecision() {
       <div className="decision-card">
 
         <p className="decision-label">
-          Manager Decision
+          ম্যানেজারের সিদ্ধান্ত
         </p>
 
-        <h2>Equipment Request Approved</h2>
+        <h2>যন্ত্রপাতির অনুরোধ অনুমোদিত হয়েছে</h2>
 
         <p className="decision-text">
-          Dear Operator,
+          প্রিয় অপারেটর,
         </p>
 
         <p className="decision-text">
-          Your request has been reviewed and an
-          equipment request has been granted.
+          আপনার অনুরোধ পর্যালোচনা করে যন্ত্রপাতির অনুরোধ অনুমোদন করা হয়েছে।
         </p>
 
         <div className="decision-details">
 
           <div>
-            <span>Equipment</span>
-            <strong>Tractor-01</strong>
+            <span>যন্ত্রপাতি</span>
+            <strong>ট্রাক্টর-০১</strong>
           </div>
 
           <div>
-            <span>Status</span>
-            <strong>Approved</strong>
+            <span>অবস্থা</span>
+            <strong>অনুমোদিত</strong>
           </div>
 
         </div>
 
-        <h3>Do you accept it?</h3>
+        <h3>আপনি কি এটি গ্রহণ করতে চান?</h3>
 
         <div className="decision-buttons">
 
@@ -52,14 +51,14 @@ function OperatorDecision() {
             className="accept-btn"
             onClick={handleYes}
           >
-            Yes
+            হ্যাঁ
           </button>
 
           <button
             className="reject-btn"
             onClick={handleNo}
           >
-            No
+            না
           </button>
 
         </div>

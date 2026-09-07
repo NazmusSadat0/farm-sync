@@ -11,17 +11,17 @@ function Reviewing() {
           ...
         </div>
 
-        <h2>Your problem is being reviewed again.</h2>
+        <h2>আপনার সমস্যাটি আবার পর্যালোচনা করা হচ্ছে।</h2>
 
         <p>
-          Please wait for the manager's next decision.
+          ম্যানেজারের পরবর্তী সিদ্ধান্তের জন্য অপেক্ষা করুন।
         </p>
 
         <button
           className="btn"
           onClick={() => navigate("/operator")}
         >
-          Back to Dashboard
+          ড্যাশবোর্ডে ফিরে যান
         </button>
 
       </div>

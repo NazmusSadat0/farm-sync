@@ -59,7 +59,7 @@ function ManagerProblemDetail() {
 
         <div>
           <p className="manager-small-title">
-            FARMSYNC
+            ফার্মসিঙ্ক
           </p>
 
           <h1>সমস্যার সমাধান</h1>
@@ -84,14 +84,14 @@ function ManagerProblemDetail() {
             সমস্যা
           </div>
 
-          <h2>Problem Statement</h2>
+          <h2>সমস্যার বিবরণ</h2>
 
           <div className="operator-info">
 
             <span>অপারেটর</span>
 
             <strong>
-              {problemData?.operator || "Mr. X"}
+              {problemData?.operator || "জনাব এক্স"}
             </strong>
 
           </div>

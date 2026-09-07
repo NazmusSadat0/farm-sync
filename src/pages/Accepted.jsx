@@ -11,21 +11,21 @@ function Accepted() {
           ✓
         </div>
 
-        <h2>Congratulations!</h2>
+        <h2>অভিনন্দন!</h2>
 
         <p>
-          Your equipment request has been accepted.
+          আপনার যন্ত্রপাতির অনুরোধ গ্রহণ করা হয়েছে।
         </p>
 
         <p className="secondary-message">
-          Please receive your equipment.
+          অনুগ্রহ করে আপনার যন্ত্রপাতি গ্রহণ করুন।
         </p>
 
         <button
           className="btn"
           onClick={() => navigate("/operator")}
         >
-          Back to Dashboard
+          ড্যাশবোর্ডে ফিরে যান
         </button>
 
       </div>

@@ -94,7 +94,7 @@ function Manager() {
             <div className="manager-header">
                 <div>
                     <p className="manager-small-title">
-                        FARMSYNC
+                        ফার্মসিঙ্ক
                     </p>
 
                     <h1>ম্যানেজার ড্যাশবোর্ড</h1>

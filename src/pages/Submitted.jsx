@@ -11,17 +11,17 @@ function Submitted() {
           ✓
         </div>
 
-        <h2>Your problem is submitted.</h2>
+        <h2>আপনার সমস্যাটি জমা দেওয়া হয়েছে।</h2>
 
         <p>
-          You will be notified soon.
+          শীঘ্রই আপনাকে জানানো হবে।
         </p>
 
         <button
           className="btn"
           onClick={() => navigate("/operator")}
         >
-          Back to Dashboard
+          ড্যাশবোর্ডে ফিরে যান
         </button>
 
       </div>

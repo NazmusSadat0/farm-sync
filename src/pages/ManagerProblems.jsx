@@ -8,23 +8,23 @@ function ManagerProblems() {
   const problems = [
     {
       id: 1,
-      operator: "Mr. X",
+      operator: "জনাব এক্স",
       problem: "জমি চাষের জন্য একটি ট্রাক্টর প্রয়োজন",
-      requestType: "Equipment Request",
+      requestType: "যন্ত্রপাতির অনুরোধ",
       status: "অপেক্ষমাণ",
     },
     {
       id: 2,
-      operator: "Mr. Y",
+      operator: "জনাব ওয়াই",
       problem: "ফসলের জন্য স্প্রেয়ার প্রয়োজন",
-      requestType: "Equipment Request",
+      requestType: "যন্ত্রপাতির অনুরোধ",
       status: "অপেক্ষমাণ",
     },
     {
       id: 3,
-      operator: "Mr. Z",
+      operator: "জনাব জেড",
       problem: "সেচের জন্য যন্ত্রপাতি প্রয়োজন",
-      requestType: "Equipment Request",
+      requestType: "যন্ত্রপাতির অনুরোধ",
       status: "অপেক্ষমাণ",
     },
   ];
@@ -36,7 +36,7 @@ function ManagerProblems() {
       <div className="manager-header">
         <div>
           <p className="manager-small-title">
-            FARMSYNC
+            ফার্মসিঙ্ক
           </p>
 
           <h1>সমস্যা ও অনুরোধ</h1>

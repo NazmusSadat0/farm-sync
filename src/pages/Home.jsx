@@ -7,25 +7,25 @@ function Home() {
     <div className="container">
       <div className="card">
 
-        <h1>Welcome to</h1>
+        <h1>স্বাগতম</h1>
         <h2>FarmSync</h2>
 
         <p className="subtitle">
-          Smart equipment management for modern farms
+          আধুনিক খামারের জন্য স্মার্ট যন্ত্রপাতি ব্যবস্থাপনা
         </p>
 
         <button
           className="btn"
           onClick={() => navigate("/operator")}
         >
-          Log in as Operator
+          অপারেটর হিসেবে লগ ইন করুন
         </button>
 
         <button
           className="btn"
           onClick={() => navigate("/manager")}
         >
-          Log in as Manager
+          ম্যানেজার হিসেবে লগ ইন করুন
         </button>
 
       </div>

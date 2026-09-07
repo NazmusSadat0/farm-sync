@@ -51,7 +51,7 @@ function Operator() {
       <div className="dashboard">
 
         <div className="tabs">
-          <button className="tab">Dashboard</button>
+          <button className="tab">ড্যাশবোর্ড</button>
 
           <button
             className="tab"
@@ -59,14 +59,14 @@ function Operator() {
               navigate("/operator/report")
             }
           >
-            Update
+            আপডেট
           </button>
 
           <button
             className="tab"
             onClick={() => navigate("/operator/new")}
           >
-            New
+            নতুন
           </button>
         </div>
 
@@ -86,7 +86,7 @@ function Operator() {
                     : "problem"
                 }
               >
-                {item.status}
+                {item.status === "Working" ? "সচল" : "সমস্যা আছে"}
               </span>
             </div>
           ))}

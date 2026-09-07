@@ -32,9 +32,9 @@ function ReportProblem() {
         className="form-card"
         onSubmit={handleSubmit}
       >
-        <h2>Please Fill Up The Form</h2>
+        <h2>ফর্মটি পূরণ করুন</h2>
 
-        <label>Update/Request</label>
+        <label>আপডেট/অনুরোধ</label>
 
         <input
           type="text"
@@ -45,7 +45,7 @@ function ReportProblem() {
           required
         />
 
-        <label>Equipment</label>
+        <label>যন্ত্রপাতি</label>
 
         <select
           value={equipment}
@@ -55,31 +55,55 @@ function ReportProblem() {
           required
         >
           <option value="">
-            Select Equipment
+            যন্ত্রপাতি নির্বাচন করুন
           </option>
 
-          <option>
-            Tractor-01
+          <option value="Tractor">
+            ট্র্যাক্টর
           </option>
 
-          <option>
-            Pump-03
+          <option value="Plough">
+            লাঙ্গল / হাল
           </option>
 
-          <option>
-            Harvester-02
+          <option value="Disc-Harrow">
+            ডিস্ক হ্যারো
           </option>
 
-          <option>
-            Sprayer-01
+          <option value="Seed-Drill">
+            বীজ বোনার যন্ত্র
+          </option>
+
+          <option value="Cultivator">
+            আবাদকারী
+          </option>
+
+          <option value="Agricultural-Sprayer">
+            কৃষি স্প্রে মেশিন
+          </option>
+
+          <option value="Tractor-Mounted-Sprayer">
+            ট্র্যাক্টরে সংযোজিত কীটনাশক ছিটানোর যন্ত্র
+          </option>
+
+          <option value="Sprinkler-Irrigation">
+            স্প্রিঙ্কলার সেচ
+          </option>
+
+          <option value="Power-Tiller">
+            জমি চাষের পাওয়ার টিলার
+          </option>
+
+          <option value="Soil-Testing-Kit">
+            মাটি পরীক্ষার কিট
           </option>
         </select>
 
-        <label>Duration</label>
+        <label>ব্যবহারের সময়কাল</label>
 
         <input
           type="text"
-          placeholder="2 Hours"
+          placeholder="২ ঘণ্টা"
           value={duration}
           onChange={(e) =>
             setDuration(e.target.value)
@@ -91,7 +115,7 @@ function ReportProblem() {
           className="btn"
           type="submit"
         >
-          Submit
+          জমা দিন
         </button>
 
         <button
@@ -99,7 +123,7 @@ function ReportProblem() {
           className="back-btn"
           onClick={() => navigate("/operator")}
         >
-          Back
+          ফিরে যান
         </button>
 
       </form>
