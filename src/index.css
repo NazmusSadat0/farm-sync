@@ -662,3 +662,433 @@ select:focus {
   }
 
 }
+
+/* ========================================
+   MANAGER DASHBOARD
+======================================== */
+
+.manager-page {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(31, 111, 67, 0.08),
+      transparent 35%
+    ),
+    #f5f7f4;
+
+  padding: 45px 6%;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.manager-header {
+  max-width: 1250px;
+
+  margin: 0 auto 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.manager-small-title {
+  color: var(--primary);
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 7px;
+}
+
+.manager-header h1 {
+  font-size: 32px;
+  font-weight: 800;
+
+  color: var(--text);
+
+  margin-bottom: 7px;
+}
+
+.manager-subtitle {
+  color: var(--text-secondary);
+
+  font-size: 14px;
+}
+
+.manager-role {
+  background: var(--primary-light);
+
+  color: var(--primary-dark);
+
+  padding: 9px 17px;
+
+  border-radius: 30px;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+/* ========================================
+   MANAGER NAVIGATION
+======================================== */
+
+.manager-nav {
+  max-width: 1250px;
+
+  margin: auto;
+  margin-bottom: 25px;
+
+  padding: 7px;
+
+  display: flex;
+  gap: 5px;
+
+  background: white;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  box-shadow:
+    0 4px 12px
+    rgba(20, 60, 38, 0.04);
+}
+
+.manager-nav button {
+  padding: 11px 22px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: var(--text-secondary);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.manager-nav button:hover {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+.manager-nav .manager-nav-active {
+  background: var(--primary);
+  color: white;
+}
+
+.manager-nav .manager-nav-active:hover {
+  background: var(--primary-dark);
+  color: white;
+}
+
+
+/* ========================================
+   SUMMARY CARDS
+======================================== */
+
+.manager-summary {
+  max-width: 1250px;
+
+  margin: 0 auto 25px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 16px;
+}
+
+.summary-box {
+  background: white;
+
+  border: 1px solid var(--border);
+  border-radius: 13px;
+
+  padding: 22px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 9px;
+
+  box-shadow:
+    0 6px 18px
+    rgba(20, 60, 38, 0.05);
+}
+
+.summary-box span {
+  color: var(--text-secondary);
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.summary-box strong {
+  color: var(--primary-dark);
+
+  font-size: 28px;
+  font-weight: 800;
+}
+
+
+/* ========================================
+   MAIN CONTENT CARD
+======================================== */
+
+.manager-content {
+  max-width: 1250px;
+
+  margin: auto;
+
+  background: white;
+
+  border: 1px solid var(--border);
+  border-radius: 16px;
+
+  box-shadow:
+    0 12px 35px
+    rgba(20, 60, 38, 0.07);
+
+  overflow: hidden;
+}
+
+.manager-content-heading {
+  padding: 25px 27px;
+
+  border-bottom:
+    1px solid var(--border);
+}
+
+.manager-content-heading h2 {
+  color: var(--text);
+
+  font-size: 21px;
+
+  margin-bottom: 5px;
+}
+
+.manager-content-heading p {
+  color: var(--text-secondary);
+
+  font-size: 13px;
+}
+
+
+/* ========================================
+   TABLE
+======================================== */
+
+.equipment-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+.manager-equipment-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  min-width: 900px;
+}
+
+.manager-equipment-table thead {
+  background: #f8faf8;
+}
+
+.manager-equipment-table th {
+  text-align: left;
+
+  padding: 14px 20px;
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  border-bottom:
+    1px solid var(--border);
+}
+
+.manager-equipment-table td {
+  padding: 17px 20px;
+
+  border-bottom:
+    1px solid #edf1ee;
+
+  font-size: 13px;
+
+  color: var(--text);
+}
+
+.manager-equipment-table tbody tr {
+  transition:
+    background 0.2s ease;
+}
+
+.manager-equipment-table tbody tr:hover {
+  background: #fafcfb;
+}
+
+.manager-equipment-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* ========================================
+   EQUIPMENT NAME
+======================================== */
+
+.manager-equipment-name {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  font-weight: 650;
+}
+
+.equipment-number {
+  width: 33px;
+  height: 33px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: var(--primary-light);
+
+  color: var(--primary-dark);
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+
+/* ========================================
+   STOCK
+======================================== */
+
+.stock-value {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 34px;
+  height: 30px;
+
+  padding: 0 10px;
+
+  background: #f1f5f2;
+
+  border-radius: 7px;
+
+  font-weight: 700;
+
+  color: var(--text);
+}
+
+
+/* ========================================
+   AVAILABILITY
+======================================== */
+
+.availability-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 6px 11px;
+
+  border-radius: 20px;
+
+  background: var(--success-bg);
+
+  color: var(--success);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.availability-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--success);
+}
+
+
+/* ========================================
+   TEXT CELLS
+======================================== */
+
+.expense-cell {
+  color: #46534b !important;
+
+  font-weight: 500;
+}
+
+.worker-cell {
+  color: #46534b !important;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 800px) {
+
+  .manager-page {
+    padding: 25px 18px;
+  }
+
+  .manager-header {
+    align-items: flex-start;
+  }
+
+  .manager-header h1 {
+    font-size: 25px;
+  }
+
+  .manager-role {
+    font-size: 11px;
+
+    padding: 7px 10px;
+  }
+
+  .manager-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .manager-nav {
+    overflow-x: auto;
+  }
+
+  .manager-nav button {
+    white-space: nowrap;
+  }
+}

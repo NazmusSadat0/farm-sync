@@ -8,6 +8,7 @@ import Submitted from "./pages/Submitted";
 import OperatorDecision from "./pages/OperatorDecision";
 import Accepted from "./pages/Accepted";
 import Reviewing from "./pages/Reviewing";
+import Manager from "./pages/Manager";
 
 function App() {
   return (
@@ -37,6 +38,11 @@ function App() {
       <Route
         path="/operator/reviewing"
         element={<Reviewing />}
+      />
+
+      <Route
+        path="/manager"
+        element={<Manager />}
       />
     </Routes>
   );

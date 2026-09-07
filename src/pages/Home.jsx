@@ -21,7 +21,10 @@ function Home() {
           Log in as Operator
         </button>
 
-        <button className="btn">
+        <button
+          className="btn"
+          onClick={() => navigate("/manager")}
+        >
           Log in as Manager
         </button>
 
