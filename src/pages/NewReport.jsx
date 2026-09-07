@@ -10,12 +10,18 @@ function NewReport() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const data = {
+    const requestData = {
+      type: "new",
       problem,
       equipment,
     };
 
-    console.log(data);
+    sessionStorage.setItem(
+      "operatorRequest",
+      JSON.stringify(requestData)
+    );
+
+    sessionStorage.removeItem("currentResponse");
 
     navigate("/operator/submitted");
   };

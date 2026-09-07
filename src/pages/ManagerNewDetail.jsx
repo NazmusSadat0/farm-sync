@@ -1,14 +1,60 @@
 import { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function ManagerNewDetail() {
   const navigate = useNavigate();
-  const location = useLocation();
+  const { id } = useParams();
 
-  const requestData = location.state?.request;
+  // Same dummy requests as ManagerNew.jsx
+  const newRequests = [
+    {
+      id: 1,
+      operator: "Mr. X",
+      problem: "নতুন ট্রাক্টর প্রয়োজন",
+      requestType: "New Equipment Request",
+      status: "অপেক্ষমাণ",
+    },
+    {
+      id: 2,
+      operator: "Mr. Y",
+      problem: "নতুন স্প্রেয়ার প্রয়োজন",
+      requestType: "New Equipment Request",
+      status: "অপেক্ষমাণ",
+    },
+    {
+      id: 3,
+      operator: "Mr. Z",
+      problem: "নতুন সেচ যন্ত্র প্রয়োজন",
+      requestType: "New Equipment Request",
+      status: "অপেক্ষমাণ",
+    },
+  ];
+
+  // Find request using URL id
+  const requestData = newRequests.find(
+    (request) => request.id === Number(id)
+  );
 
   const [equipment, setEquipment] = useState("");
   const [suggestion, setSuggestion] = useState("");
+
+  // If invalid request id
+  if (!requestData) {
+    return (
+      <div className="manager-page">
+        <div className="status-card">
+          <h2>অনুরোধটি পাওয়া যায়নি</h2>
+
+          <button
+            className="btn"
+            onClick={() => navigate("/manager/new")}
+          >
+            ফিরে যান
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,27 +64,30 @@ function ManagerNewDetail() {
       return;
     }
 
-    const managerDecision = {
-      requestId: requestData?.id,
-      operator: requestData?.operator,
-      problem: requestData?.problem,
-      equipment,
-      suggestion,
-      status: "approved",
-    };
+    // Get solved New requests
+    const solvedNewRequests =
+      JSON.parse(
+        localStorage.getItem("solvedNewRequests")
+      ) || [];
 
-    console.log(
-      "Manager New Decision:",
-      managerDecision
+    // Add current request
+    if (!solvedNewRequests.includes(requestData.id)) {
+      solvedNewRequests.push(requestData.id);
+    }
+
+    // Save solved status
+    localStorage.setItem(
+      "solvedNewRequests",
+      JSON.stringify(solvedNewRequests)
     );
 
-    /*
-      Later your C++ backend API goes here.
-
-      Example idea:
-
-      POST /api/new-requests/:id/decision
-    */
+    console.log("Manager New Decision:", {
+      requestId: requestData.id,
+      operator: requestData.operator,
+      problem: requestData.problem,
+      equipment,
+      suggestion,
+    });
 
     navigate("/manager/new");
   };
@@ -48,7 +97,6 @@ function ManagerNewDetail() {
 
       {/* Header */}
       <div className="manager-header">
-
         <div>
           <p className="manager-small-title">
             FARMSYNC
@@ -64,7 +112,6 @@ function ManagerNewDetail() {
         <div className="manager-role">
           ম্যানেজার
         </div>
-
       </div>
 
       <div className="problem-detail-layout">
@@ -79,30 +126,23 @@ function ManagerNewDetail() {
           <h2>Request Statement</h2>
 
           <div className="operator-info">
-
             <span>অপারেটর</span>
 
             <strong>
-              {requestData?.operator || "Mr. X"}
+              {requestData.operator}
             </strong>
-
           </div>
 
           <div className="problem-statement-box">
-
             <p>
-              {requestData?.problem ||
-                "নতুন ট্রাক্টর প্রয়োজন"}
+              {requestData.problem}
             </p>
-
           </div>
 
           <button
             type="button"
             className="manager-back-button"
-            onClick={() =>
-              navigate("/manager/new")
-            }
+            onClick={() => navigate("/manager/new")}
           >
             ← ফিরে যান
           </button>
@@ -128,12 +168,8 @@ function ManagerNewDetail() {
           </p>
 
 
-          {/* Equipment */}
           <div className="manager-form-group">
-
-            <label>
-              যন্ত্রপাতি
-            </label>
+            <label>যন্ত্রপাতি</label>
 
             <select
               value={equipment}
@@ -184,21 +220,15 @@ function ManagerNewDetail() {
               <option value="থ্রেশার">
                 থ্রেশার
               </option>
-
             </select>
-
           </div>
 
 
-          {/* NO DURATION FIELD HERE */}
+          {/* New section has NO Duration */}
 
 
-          {/* Suggestion */}
           <div className="manager-form-group">
-
-            <label>
-              পরামর্শ
-            </label>
+            <label>পরামর্শ</label>
 
             <textarea
               placeholder="অপারেটরের জন্য আপনার পরামর্শ লিখুন..."
@@ -207,9 +237,7 @@ function ManagerNewDetail() {
                 setSuggestion(e.target.value)
               }
             />
-
           </div>
-
 
           <button
             className="manager-submit-solution"
@@ -221,7 +249,6 @@ function ManagerNewDetail() {
         </form>
 
       </div>
-
     </div>
   );
 }

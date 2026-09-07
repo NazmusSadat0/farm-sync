@@ -1,7 +1,14 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function ManagerNew() {
   const navigate = useNavigate();
+
+  const [solvedNewRequests] = useState(() => {
+    return JSON.parse(
+      localStorage.getItem("solvedNewRequests")
+    ) || [];
+  });
 
   // Temporary frontend data.
   // Later this will come from Operator -> New through backend.
@@ -78,7 +85,7 @@ function ManagerNew() {
         <div className="problem-page-heading">
 
           <div>
-            <h2>অপেক্ষমাণ নতুন অনুরোধ</h2>
+            <h2>নতুন অনুরোধের তালিকা</h2>
 
             <p>
               সিদ্ধান্ত দেওয়ার জন্য একটি অনুরোধ নির্বাচন করুন
@@ -98,16 +105,7 @@ function ManagerNew() {
             <div
               className="manager-problem-card"
               key={item.id}
-              onClick={() =>
-                navigate(
-                  `/manager/new/${item.id}`,
-                  {
-                    state: {
-                      request: item,
-                    },
-                  }
-                )
-              }
+              onClick={() => navigate(`/manager/new/${item.id}`)}
             >
 
               <div className="problem-number">
@@ -122,8 +120,8 @@ function ManagerNew() {
                     {item.operator}
                   </h3>
 
-                  <span className="pending-badge">
-                    {item.status}
+                  <span className={solvedNewRequests.includes(item.id) ? "solved-badge" : "pending-badge"}>
+                    {solvedNewRequests.includes(item.id) ? "সফল হয়েছে" : item.status}
                   </span>
 
                 </div>
@@ -132,9 +130,6 @@ function ManagerNew() {
                   {item.problem}
                 </p>
 
-                <span className="request-type">
-                  {item.requestType}
-                </span>
 
               </div>
 

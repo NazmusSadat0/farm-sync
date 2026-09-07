@@ -94,7 +94,7 @@ function Manager() {
             <div className="manager-header">
                 <div>
                     <p className="manager-small-title">
-                        ফার্মসিঙ্ক
+                        FarmSync
                     </p>
 
                     <h1>ম্যানেজার ড্যাশবোর্ড</h1>
@@ -104,8 +104,16 @@ function Manager() {
                     </p>
                 </div>
 
-                <div className="manager-role">
-                    ম্যানেজার
+                <div className="dashboard-role-actions">
+                    <div className="manager-role">ম্যানেজার</div>
+                    <button
+                        type="button"
+                        className="role-switch-button"
+                        onClick={() => navigate("/operator")}
+                    >
+                        <span aria-hidden="true">⇄</span>
+                        অপারেটর ড্যাশবোর্ডে যান
+                    </button>
                 </div>
             </div>
 

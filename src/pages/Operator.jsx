@@ -10,7 +10,7 @@ function Operator() {
     },
     {
       name: "লাঙ্গল / হাল  ",
-      status: "Problem",
+      status: "Working",
     },
     {
       name: "ডিস্ক হ্যারো",
@@ -18,7 +18,7 @@ function Operator() {
     },
     {
       name: " বীজ বোনার যন্ত্র",
-      status: "Problem",
+      status: "Working",
     },
     {
       name: "আবাদকারী",
@@ -34,7 +34,7 @@ function Operator() {
     },
     {
       name: "স্প্রিঙ্কলার সেচ",
-      status: "Working"
+      status: "Problem"
     },
     {
       name: " জমি চাষের পাওয়ার টিলার",
@@ -49,6 +49,17 @@ function Operator() {
   return (
     <div className="container">
       <div className="dashboard">
+
+        <div className="dashboard-role-actions">
+          <button
+            type="button"
+            className="role-switch-button"
+            onClick={() => navigate("/manager")}
+          >
+            <span aria-hidden="true">⇄</span>
+            ম্যানেজার ড্যাশবোর্ডে যান
+          </button>
+        </div>
 
         <div className="tabs">
           <button className="tab">ড্যাশবোর্ড</button>

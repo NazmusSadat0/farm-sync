@@ -19,37 +19,40 @@ function ManagerProblemDetail() {
       return;
     }
 
-    const managerDecision = {
-      problemId: problemData?.id,
-      operator: problemData?.operator,
-      problem: problemData?.problem,
-      equipment,
-      duration,
-      suggestion,
-      status: "approved",
-    };
+    // Get already solved problems
+    const solvedProblems =
+      JSON.parse(localStorage.getItem("solvedProblems")) || [];
 
-    console.log(
-      "Manager Decision:",
-      managerDecision
+    // Add this problem if it is not already there
+    if (!solvedProblems.includes(problemData.id)) {
+      solvedProblems.push(problemData.id);
+    }
+
+    // Save
+    localStorage.setItem(
+      "solvedProblems",
+      JSON.stringify(solvedProblems)
     );
-
-    /*
-      Later your backend API will go here.
-
-      Example:
-
-      fetch("http://localhost:5000/api/decisions", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(managerDecision),
-      });
-    */
 
     navigate("/manager/problems");
   };
+
+  /* it will go inside handleSubmit function
+
+  
+    Later your backend API will go here.
+
+    Example:
+
+    fetch("http://localhost:5000/api/decisions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(managerDecision),
+    });
+  */
+
 
   return (
     <div className="manager-page">
@@ -59,7 +62,7 @@ function ManagerProblemDetail() {
 
         <div>
           <p className="manager-small-title">
-            ফার্মসিঙ্ক
+            FarmSync
           </p>
 
           <h1>সমস্যার সমাধান</h1>

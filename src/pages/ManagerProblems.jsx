@@ -1,7 +1,14 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function ManagerProblems() {
   const navigate = useNavigate();
+
+  const [solvedProblems] = useState(() => {
+    return JSON.parse(
+      localStorage.getItem("solvedProblems")
+    ) || [];
+  });
 
   // Temporary frontend data.
   // Later this will come from backend/database.
@@ -36,7 +43,7 @@ function ManagerProblems() {
       <div className="manager-header">
         <div>
           <p className="manager-small-title">
-            ফার্মসিঙ্ক
+            FarmSync
           </p>
 
           <h1>সমস্যা ও অনুরোধ</h1>
@@ -122,9 +129,15 @@ function ManagerProblems() {
                     {item.operator}
                   </h3>
 
-                  <span className="pending-badge">
-                    {item.status}
-                  </span>
+                  {solvedProblems.includes(item.id) ? (
+                    <span className="solved-badge">
+                      সফল হয়েছে
+                    </span>
+                  ) : (
+                    <span className="pending-badge">
+                      অপেক্ষমাণ
+                    </span>
+                  )}
 
                 </div>
 

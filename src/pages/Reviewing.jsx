@@ -1,30 +1,81 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { getRandomResponse } from "../utils/dummyResponse";
 
 function Reviewing() {
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+
+      const savedRequest =
+        sessionStorage.getItem(
+          "operatorRequest"
+        );
+
+      const savedResponse =
+        sessionStorage.getItem(
+          "currentResponse"
+        );
+
+      if (!savedRequest) {
+        navigate("/operator");
+        return;
+      }
+
+      const request =
+        JSON.parse(savedRequest);
+
+      const currentResponse =
+        savedResponse
+          ? JSON.parse(savedResponse)
+          : null;
+
+      const nextResponse =
+        getRandomResponse(
+          request.type,
+          currentResponse?.id ?? null
+        );
+
+      sessionStorage.setItem(
+        "currentResponse",
+        JSON.stringify(nextResponse)
+      );
+
+      navigate("/operator/decision");
+
+    }, 5000);
+
+
+    // Cleanup if user leaves page
+    return () => {
+      clearTimeout(timer);
+    };
+
+  }, [navigate]);
+
   return (
     <div className="container">
+
       <div className="status-card">
 
         <div className="waiting-circle">
           ...
         </div>
 
-        <h2>আপনার সমস্যাটি আবার পর্যালোচনা করা হচ্ছে।</h2>
+        <h2>
+          আপনার অনুরোধটি পুনরায়
+          পর্যালোচনা করা হচ্ছে।
+        </h2>
 
         <p>
-          ম্যানেজারের পরবর্তী সিদ্ধান্তের জন্য অপেক্ষা করুন।
+          অনুগ্রহ করে অপেক্ষা করুন।
+          শীঘ্রই একটি নতুন সিদ্ধান্ত
+          জানানো হবে।
         </p>
 
-        <button
-          className="btn"
-          onClick={() => navigate("/operator")}
-        >
-          ড্যাশবোর্ডে ফিরে যান
-        </button>
-
       </div>
+
     </div>
   );
 }

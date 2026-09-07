@@ -14,13 +14,19 @@ function ReportProblem() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const data = {
+    const requestData = {
+      type: "problem",
       problem,
       equipment,
       duration,
     };
 
-    console.log(data);
+    sessionStorage.setItem(
+      "operatorRequest",
+      JSON.stringify(requestData)
+    );
+
+    sessionStorage.removeItem("currentResponse");
 
     navigate("/operator/submitted");
   };
