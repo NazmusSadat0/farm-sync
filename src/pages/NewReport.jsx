@@ -1,15 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-// It will be worked as Update section
-
-function ReportProblem() {
-
+function NewReport() {
   const navigate = useNavigate();
 
   const [problem, setProblem] = useState("");
   const [equipment, setEquipment] = useState("");
-  const [duration, setDuration] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,31 +13,31 @@ function ReportProblem() {
     const data = {
       problem,
       equipment,
-      duration,
     };
 
     console.log(data);
 
-    alert("Problem Submitted");
+    alert("Report submitted successfully!");
+
+    setProblem("");
+    setEquipment("");
   };
 
   return (
     <div className="container">
-
       <form
         className="form-card"
         onSubmit={handleSubmit}
       >
         <h2>Please Fill Up The Form</h2>
 
-        <label>Update/Request</label>
+        <label>Problem</label>
 
         <input
           type="text"
+          placeholder="Enter the problem"
           value={problem}
-          onChange={(e) =>
-            setProblem(e.target.value)
-          }
+          onChange={(e) => setProblem(e.target.value)}
           required
         />
 
@@ -49,43 +45,29 @@ function ReportProblem() {
 
         <select
           value={equipment}
-          onChange={(e) =>
-            setEquipment(e.target.value)
-          }
+          onChange={(e) => setEquipment(e.target.value)}
           required
         >
           <option value="">
             Select Equipment
           </option>
 
-          <option>
+          <option value="Tractor-01">
             Tractor-01
           </option>
 
-          <option>
+          <option value="Pump-03">
             Pump-03
           </option>
 
-          <option>
+          <option value="Harvester-02">
             Harvester-02
           </option>
 
-          <option>
+          <option value="Sprayer-01">
             Sprayer-01
           </option>
         </select>
-
-        <label>Duration</label>
-
-        <input
-          type="text"
-          placeholder="2 Hours"
-          value={duration}
-          onChange={(e) =>
-            setDuration(e.target.value)
-          }
-          required
-        />
 
         <button
           className="btn"
@@ -101,11 +83,9 @@ function ReportProblem() {
         >
           Back
         </button>
-
       </form>
-
     </div>
   );
 }
 
-export default ReportProblem;
+export default NewReport;

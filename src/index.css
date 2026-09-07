@@ -399,3 +399,36 @@ select:focus {
     padding: 25px 20px;
   }
 }
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-top: -25px;
+  margin-bottom: 20px;
+}
+
+.back-btn {
+  display: block;
+  margin: 0;
+
+  width: 280px;
+  padding: 12px;
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  background: white;
+  color: var(--text-secondary);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.back-btn:hover {
+  background: #f5f7f4;
+  color: var(--text);
+}

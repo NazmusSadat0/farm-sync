@@ -21,28 +21,28 @@ function Operator() {
       status: "Problem",
     },
     {
-        name: "আবাদকারী",
-        status: "Working"
+      name: "আবাদকারী",
+      status: "Working"
     },
     {
-        name: "কৃষি স্প্রে মেশিন",
-        status: "Working",
+      name: "কৃষি স্প্রে মেশিন",
+      status: "Working",
     },
     {
-        name: "ট্র্যাক্টরে সংযোজিত কীটনাশক ছিটানোর যন্ত্র",
-        status: "Working"
+      name: "ট্র্যাক্টরে সংযোজিত কীটনাশক ছিটানোর যন্ত্র",
+      status: "Working"
     },
     {
-        name: "স্প্রিঙ্কলার সেচ",
-        status: "Working"
+      name: "স্প্রিঙ্কলার সেচ",
+      status: "Working"
     },
     {
-        name: " জমি চাষের পাওয়ার টিলার",
-        status: "Problem"
-    }, 
+      name: " জমি চাষের পাওয়ার টিলার",
+      status: "Problem"
+    },
     {
-        name: "মাটি পরীক্ষার কীট",
-        status: "Working"
+      name: "মাটি পরীক্ষার কীট",
+      status: "Working"
     }
   ];
 
@@ -62,7 +62,10 @@ function Operator() {
             Update
           </button>
 
-          <button className="tab">
+          <button
+            className="tab"
+            onClick={() => navigate("/operator/new")}
+          >
             New
           </button>
         </div>

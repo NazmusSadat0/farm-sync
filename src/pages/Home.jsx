@@ -7,8 +7,12 @@ function Home() {
     <div className="container">
       <div className="card">
 
-        <h1>Welcome To</h1>
+        <h1>Welcome to</h1>
         <h2>FarmSync</h2>
+
+        <p className="subtitle">
+          Smart equipment management for modern farms
+        </p>
 
         <button
           className="btn"
