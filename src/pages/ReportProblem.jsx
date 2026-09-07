@@ -22,7 +22,7 @@ function ReportProblem() {
 
     console.log(data);
 
-    alert("Problem Submitted");
+    navigate("/operator/submitted");
   };
 
   return (

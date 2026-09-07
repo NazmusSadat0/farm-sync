@@ -17,10 +17,7 @@ function NewReport() {
 
     console.log(data);
 
-    alert("Report submitted successfully!");
-
-    setProblem("");
-    setEquipment("");
+    navigate("/operator/submitted");
   };
 
   return (
