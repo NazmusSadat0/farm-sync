@@ -11,6 +11,8 @@ import Reviewing from "./pages/Reviewing";
 import Manager from "./pages/Manager";
 import ManagerProblems from "./pages/ManagerProblems";
 import ManagerProblemDetail from "./pages/ManagerProblemDetail";
+import ManagerNew from "./pages/ManagerNew";
+import ManagerNewDetail from "./pages/ManagerNewDetail";
 
 function App() {
   return (
@@ -55,6 +57,15 @@ function App() {
       <Route
         path="/manager/problem/:id"
         element={<ManagerProblemDetail />}
+      />
+      <Route
+        path="/manager/new"
+        element={<ManagerNew />}
+      />
+
+      <Route
+        path="/manager/new/:id"
+        element={<ManagerNewDetail />}
       />
 
 

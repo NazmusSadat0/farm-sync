@@ -125,7 +125,9 @@ function Manager() {
                     সমস্যা
                 </button>
 
-                <button>
+                <button
+                    onClick={() => navigate("/manager/new")}
+                >
                     নতুন
                 </button>
 

@@ -1,30 +1,30 @@
 import { useNavigate } from "react-router-dom";
 
-function ManagerProblems() {
+function ManagerNew() {
   const navigate = useNavigate();
 
   // Temporary frontend data.
-  // Later this will come from backend/database.
-  const problems = [
+  // Later this will come from Operator -> New through backend.
+  const newRequests = [
     {
       id: 1,
-      operator: "জনাব এক্স",
-      problem: "জমি চাষের জন্য একটি ট্রাক্টর প্রয়োজন",
-      requestType: "যন্ত্রপাতির অনুরোধ",
+      operator: "Mr. X",
+      problem: "নতুন ট্রাক্টর প্রয়োজন",
+      requestType: "New Equipment Request",
       status: "অপেক্ষমাণ",
     },
     {
       id: 2,
-      operator: "জনাব ওয়াই",
-      problem: "ফসলের জন্য স্প্রেয়ার প্রয়োজন",
-      requestType: "যন্ত্রপাতির অনুরোধ",
+      operator: "Mr. Y",
+      problem: "নতুন স্প্রেয়ার প্রয়োজন",
+      requestType: "New Equipment Request",
       status: "অপেক্ষমাণ",
     },
     {
       id: 3,
-      operator: "জনাব জেড",
-      problem: "সেচের জন্য যন্ত্রপাতি প্রয়োজন",
-      requestType: "যন্ত্রপাতির অনুরোধ",
+      operator: "Mr. Z",
+      problem: "নতুন সেচ যন্ত্র প্রয়োজন",
+      requestType: "New Equipment Request",
       status: "অপেক্ষমাণ",
     },
   ];
@@ -36,13 +36,13 @@ function ManagerProblems() {
       <div className="manager-header">
         <div>
           <p className="manager-small-title">
-            ফার্মসিঙ্ক
+            FARMSYNC
           </p>
 
-          <h1>সমস্যা ও অনুরোধ</h1>
+          <h1>নতুন অনুরোধ</h1>
 
           <p className="manager-subtitle">
-            অপারেটরদের জমা দেওয়া সমস্যাগুলো পর্যালোচনা করুন
+            অপারেটরদের নতুন যন্ত্রপাতির অনুরোধ পর্যালোচনা করুন
           </p>
         </div>
 
@@ -60,13 +60,13 @@ function ManagerProblems() {
           ড্যাশবোর্ড
         </button>
 
-        <button className="manager-nav-active">
+        <button
+          onClick={() => navigate("/manager/problems")}
+        >
           সমস্যা
         </button>
 
-        <button
-          onClick={() => navigate("/manager/new")}
-        >
+        <button className="manager-nav-active">
           নতুন
         </button>
 
@@ -78,32 +78,32 @@ function ManagerProblems() {
         <div className="problem-page-heading">
 
           <div>
-            <h2>অপেক্ষমাণ সমস্যা</h2>
+            <h2>অপেক্ষমাণ নতুন অনুরোধ</h2>
 
             <p>
-              সমাধান দেওয়ার জন্য একটি সমস্যা নির্বাচন করুন
+              সিদ্ধান্ত দেওয়ার জন্য একটি অনুরোধ নির্বাচন করুন
             </p>
           </div>
 
           <div className="problem-count">
-            {problems.length} টি সমস্যা
+            {newRequests.length} টি অনুরোধ
           </div>
 
         </div>
 
         <div className="manager-problem-list">
 
-          {problems.map((item) => (
+          {newRequests.map((item) => (
 
             <div
               className="manager-problem-card"
               key={item.id}
               onClick={() =>
                 navigate(
-                  `/manager/problem/${item.id}`,
+                  `/manager/new/${item.id}`,
                   {
                     state: {
-                      problem: item,
+                      request: item,
                     },
                   }
                 )
@@ -154,4 +154,4 @@ function ManagerProblems() {
   );
 }
 
-export default ManagerProblems;
+export default ManagerNew;
