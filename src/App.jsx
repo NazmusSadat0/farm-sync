@@ -9,6 +9,8 @@ import OperatorDecision from "./pages/OperatorDecision";
 import Accepted from "./pages/Accepted";
 import Reviewing from "./pages/Reviewing";
 import Manager from "./pages/Manager";
+import ManagerProblems from "./pages/ManagerProblems";
+import ManagerProblemDetail from "./pages/ManagerProblemDetail";
 
 function App() {
   return (
@@ -44,6 +46,18 @@ function App() {
         path="/manager"
         element={<Manager />}
       />
+
+      <Route
+        path="/manager/problems"
+        element={<ManagerProblems />}
+      />
+
+      <Route
+        path="/manager/problem/:id"
+        element={<ManagerProblemDetail />}
+      />
+
+
     </Routes>
   );
 }
