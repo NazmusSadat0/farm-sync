@@ -1672,3 +1672,344 @@ select:focus {
     transition: none;
   }
 }
+
+
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .manager-page {
+    padding: 20px;
+  }
+
+  .manager-header {
+    gap: 20px;
+  }
+
+  .manager-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .problem-detail-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .equipment-table-wrapper {
+    overflow-x: auto;
+  }
+
+  .manager-equipment-table {
+    min-width: 850px;
+  }
+}
+
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    min-height: 100vh;
+    padding: 18px;
+    align-items: flex-start;
+    padding-top: 40px;
+  }
+
+  /* HOME */
+  .card {
+    width: 100%;
+    max-width: 100%;
+    padding: 35px 22px;
+    border-radius: 16px;
+  }
+
+  .card h1 {
+    font-size: 17px;
+  }
+
+  .card h2 {
+    font-size: 30px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+  /* OPERATOR DASHBOARD */
+  .dashboard {
+    width: 100%;
+    max-width: 100%;
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .tabs {
+    width: 100%;
+    overflow-x: auto;
+    display: flex;
+    gap: 6px;
+  }
+
+  .tab {
+    min-width: max-content;
+    padding: 10px 15px;
+  }
+
+  .equipment-item {
+    padding: 14px;
+    gap: 12px;
+    font-size: 13px;
+  }
+
+  .working,
+  .problem {
+    flex-shrink: 0;
+  }
+
+
+  /* OPERATOR FORMS */
+  .form-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 24px 18px;
+  }
+
+  .form-card h2 {
+    font-size: 21px;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
+  .back-btn {
+    width: 100%;
+  }
+
+
+  /* STATUS / DECISION PAGES */
+  .status-card,
+  .decision-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 28px 20px;
+  }
+
+  .decision-card h2 {
+    font-size: 21px;
+  }
+
+  .decision-details div {
+    gap: 15px;
+  }
+
+  .decision-details strong {
+    text-align: right;
+  }
+
+  .decision-buttons {
+    flex-direction: column;
+  }
+
+  .accept-btn,
+  .reject-btn {
+    width: 100%;
+  }
+
+
+  /* MANAGER HEADER */
+  .manager-page {
+    padding: 18px;
+  }
+
+  .manager-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .manager-header h1 {
+    font-size: 26px;
+  }
+
+  .manager-role {
+    align-self: flex-start;
+  }
+
+
+  /* MANAGER NAVIGATION */
+  .manager-nav {
+    width: 100%;
+    overflow-x: auto;
+    display: flex;
+    gap: 6px;
+    padding: 8px;
+  }
+
+  .manager-nav button {
+    flex-shrink: 0;
+    min-width: 110px;
+  }
+
+
+  /* SUMMARY CARDS */
+  .manager-summary {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .summary-box {
+    padding: 18px;
+  }
+
+
+  /* MANAGER TABLE */
+  .manager-content {
+    padding: 18px;
+  }
+
+  .manager-content-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .equipment-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .manager-equipment-table {
+    min-width: 850px;
+  }
+
+
+  /* MANAGER PROBLEM / NEW LIST */
+  .manager-problem-container {
+    width: 100%;
+  }
+
+  .problem-page-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 20px;
+  }
+
+  .manager-problem-list {
+    padding: 14px;
+  }
+
+  .manager-problem-card {
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .problem-number {
+    min-width: 38px;
+    height: 38px;
+  }
+
+  .problem-top-row {
+    flex-wrap: wrap;
+  }
+
+  .problem-information p {
+    line-height: 1.6;
+  }
+
+  .problem-arrow {
+    display: none;
+  }
+
+
+  /* MANAGER DETAILS */
+  .problem-detail-layout {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .problem-statement-card,
+  .manager-solution-card {
+    padding: 22px 18px;
+  }
+
+  .problem-statement-box {
+    min-height: 130px;
+  }
+
+  .manager-submit-solution,
+  .manager-back-button {
+    width: 100%;
+  }
+}
+
+
+/* Very small phones */
+@media (max-width: 480px) {
+  .container {
+    padding: 12px;
+    padding-top: 25px;
+  }
+
+  .card {
+    padding: 28px 18px;
+  }
+
+  .card h2 {
+    font-size: 27px;
+  }
+
+  .manager-page {
+    padding: 12px;
+  }
+
+  .manager-header h1 {
+    font-size: 23px;
+  }
+
+  .manager-subtitle {
+    font-size: 12px;
+  }
+
+  .manager-nav button {
+    min-width: 95px;
+    padding: 9px 12px;
+    font-size: 12px;
+  }
+
+  .manager-content {
+    padding: 14px;
+  }
+
+  .problem-statement-card,
+  .manager-solution-card {
+    padding: 18px 15px;
+  }
+
+  .status-card,
+  .decision-card {
+    padding: 25px 16px;
+  }
+
+  .decision-details div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .decision-details strong {
+    text-align: left;
+  }
+}
