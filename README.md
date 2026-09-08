@@ -57,6 +57,14 @@ Managers can:
 
 ---
 
+## 🚀 Live Demo
+
+FarmSync is deployed on **Vercel** and can be accessed here:
+
+👉  https://farm-sync-five.vercel.app/ 
+
+---
+
 ## ✨ Key Features
 
 ### Equipment Dashboard
@@ -258,15 +266,7 @@ src/
 ├── main.jsx
 └── index.css
 ```
-
 ---
-
-## 🚀 Live Demo
-
-FarmSync is deployed on **Vercel** and can be accessed here:
-
-👉 ** (https://farm-sync-five.vercel.app/) **
-
 
 
 ## 🖥️ Main Pages
@@ -335,10 +335,10 @@ The prototype can later be expanded with:
 Add your team members here:
 
 ```text
-Nazmus Sadat — Frontend
-Adil Mahmud Ayon — Bakcend
-Antora Ghosh — Database
-Mitaly Farzana - Slides and Presentation
+Nazmus Sadat 
+Adil Mahmud Ayon 
+Antora Ghosh 
+Mitaly Farzana 
 ```
 
 ---
